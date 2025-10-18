@@ -19,4 +19,18 @@ public class WeatherForecastTests
         // Assert
         Assert.Equal(5, result.Count());
     }
+
+    [Fact]
+    public void WeatherForecastTestsGetSingleWeatherForecastShouldReturnOneItem()
+    {
+        // Arrange
+        var logger = Substitute.For<ILogger<WeatherForecastController>>();
+        var controller = new WeatherForecastController(logger);
+        
+        // Act
+        var result = controller.GetSingleWeatherForecast();
+        
+        // Assert
+        Assert.NotNull(result);
+    }
 }
