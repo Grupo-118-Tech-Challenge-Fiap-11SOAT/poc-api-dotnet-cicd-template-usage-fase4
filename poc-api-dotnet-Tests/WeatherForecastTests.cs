@@ -7,7 +7,7 @@ namespace poc_api_dotnet_Tests;
 public class WeatherForecastTests
 {
     [Fact]
-    public void WeatherForecastTestsGetShouldReturnFiveItens()
+    public void WeatherForecastTestsGetShouldReturnFiveItems()
     {
         // Arrange
         var logger = Substitute.For<ILogger<WeatherForecastController>>();
