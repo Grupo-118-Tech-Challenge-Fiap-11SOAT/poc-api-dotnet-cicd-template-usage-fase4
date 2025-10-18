@@ -11,7 +11,7 @@ jobs:
     with:
       sonar-project-key: "poc-api-dotnet-cicd-template-usage-fase4"
       sonar-organization: "grupo-118-tech-challenge-fiap-11soat"
-      solution-path: "."
+      solution-path: "./poc-api-dotnet-cicd-template-usage-fase4/poc-api-dotnet-cicd-template-usage-fase4.sln"
       test-projects: "**/*Tests.csproj"
       dotnet-version: "8.0.x"
       build-configuration: "Release"
