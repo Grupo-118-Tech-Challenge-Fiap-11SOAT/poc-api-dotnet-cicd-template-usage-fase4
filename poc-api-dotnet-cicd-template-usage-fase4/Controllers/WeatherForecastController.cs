@@ -21,6 +21,8 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
+        _logger.LogDebug("Generating weather forecast data.");
+        
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -33,6 +35,8 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetSingleWeatherForecast")]    
     public WeatherForecast GetSingleWeatherForecast()
     {
+        _logger.LogDebug("Generating single weather forecast data.");        
+        
         return new WeatherForecast()
         {
             Date = DateOnly.FromDateTime(DateTime.Now.AddDays(-1)),
