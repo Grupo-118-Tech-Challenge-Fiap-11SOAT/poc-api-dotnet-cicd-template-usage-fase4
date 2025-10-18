@@ -18,6 +18,10 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Get a list of forecast
+    /// </summary>
+    /// <returns></returns>
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
@@ -32,6 +36,10 @@ public class WeatherForecastController : ControllerBase
             .ToArray();
     }
 
+    /// <summary>
+    /// Get a single forecast
+    /// </summary>
+    /// <returns></returns>
     [HttpGet(Name = "GetSingleWeatherForecast")]    
     public WeatherForecast GetSingleWeatherForecast()
     {
