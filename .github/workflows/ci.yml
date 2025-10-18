@@ -21,4 +21,4 @@ jobs:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
       ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
-      ACR_REGISTRY: ${{ secrets.ACR_REGISTRY }}
+      ACR_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
