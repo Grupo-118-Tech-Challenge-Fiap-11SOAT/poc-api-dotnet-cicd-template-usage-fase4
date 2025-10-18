@@ -1,0 +1,6 @@
+@poc_api_dotnet_cicd_template_usage_fase4_HostAddress = http://localhost:5274
+
+GET {{poc_api_dotnet_cicd_template_usage_fase4_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
