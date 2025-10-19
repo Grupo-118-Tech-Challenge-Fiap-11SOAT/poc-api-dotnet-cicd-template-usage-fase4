@@ -20,9 +20,12 @@ jobs:
           helm_values_file: "helm/values-production.yaml"
           secrets_mapping: |
               {
+                  "DOCKER_REGISTRY": "DOCKER_REGISTRY",
+                  "ACR_USERNAME": "ACR_USERNAME",
+                  "ACR_PASSWORD": "ACR_PASSWORD",
                   "POC_IMAGE_TAG": "${{ github.event.inputs.image_tag }}",
                   "POC_DATABASE_HOST": "GS_POC_DATABASE_HOST",
                   "POC_DATABASE_PORT": "GS_POC_DATABASE_PORT",
                   "POC_DATABASE_NAME": "GS_POC_DATABASE_NAME",
-                  "POC_API_KEY": "GS_POC_API_KEY"
+                  "POC_API_KEY": "GS_POC_API_KEY",
               }
