@@ -90,13 +90,13 @@ secret:
     poc-api-key: "aaaaa"  
   envVars:
     - name: POC_DATABASE_HOST
-      key: poc-db-host
+      secretKey: poc-db-host
     - name: POC_DATABASE_PORT
-      key: poc-db-port
+      secretKey: poc-db-port
     - name: POC_DATABASE_NAME
-      key: poc-db-name
+      secretKey: poc-db-name
     - name: POC_API_KEY
-      key: poc-api-key
+      secretKey: poc-api-key
 
 nodeSelector: {}
 
