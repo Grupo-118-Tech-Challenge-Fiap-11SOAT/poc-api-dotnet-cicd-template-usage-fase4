@@ -1,3 +1,5 @@
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,17 +7,28 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwaggerGen(options =>
+{
+    // using System.Reflection;
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
+
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+
+
+app.UseSwagger();
+app.UseSwaggerUI(s =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    s.SwaggerEndpoint("../swagger/v1/swagger.json", "POC Grupo 118 - Fase 4 | Swagger");
+    s.RoutePrefix = string.Empty;
+    s.DocumentTitle = "POC Grupo 118 - Fase 4 | Swagger";
+});
 
 app.UseHttpsRedirection();
 

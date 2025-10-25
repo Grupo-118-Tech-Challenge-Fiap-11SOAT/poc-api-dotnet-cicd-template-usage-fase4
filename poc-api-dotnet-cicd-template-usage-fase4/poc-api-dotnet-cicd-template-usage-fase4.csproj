@@ -8,6 +8,14 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Debug\net8.0\poc-api-dotnet-cicd-template-usage-fase4.xml</DocumentationFile>
+    </PropertyGroup>    
+    
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\net8.0\poc-api-dotnet-cicd-template-usage-fase4.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.21" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
