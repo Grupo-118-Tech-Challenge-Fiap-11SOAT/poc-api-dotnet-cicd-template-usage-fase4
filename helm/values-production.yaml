@@ -32,7 +32,9 @@ service:
 internalIngress:
   enabled: true
   className: "nginx-internal-static"
-  annotations: {}
+  path: /poc-api
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
   tls: []
 
 
