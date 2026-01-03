@@ -13,6 +13,10 @@ on:
             description: 'Field to insert the Helm Chart Name'
             required: true
             default: "grupo118fase4"
+        helm_release_name:
+            description: 'Field to define the release name'
+            required: true
+            default: 'poc-api-dotnet-cicd-template-usage-fase4'
 
 jobs:
     deploy:
@@ -20,8 +24,9 @@ jobs:
         secrets: inherit
         with:
           helm_chart_version: ${{ github.event.inputs.helm_chart_version }}
-          helm_chart_name: "grupo118fase4"
+          helm_chart_name: ${{ github.event.inputs.helm_chart_name }}
           helm_values_file: "helm/values-production.yaml"
+          helm_release_name: ${{ github.event.inputs.helm_release_name }}
           secrets_mapping: |
               {
                   "DOCKER_REGISTRY": "DOCKER_REGISTRY",
