@@ -83,10 +83,10 @@ secret:
   name: "poc-api-dotnet-cicd-template-usage-fase4"
   annotations: {}
   data:
-    poc-db-host: "${POC_DATABASE_HOST}"
-    poc-db-port: "${POC_DATABASE_PORT}"
-    poc-db-name: "${POC_DATABASE_NAME}"
-    poc-api-key: "${POC_API_KEY}" 
+    poc-db-host: "${DatabaseConfigurations__Host}"
+    poc-db-port: "${DatabaseConfigurations__Port}"
+    poc-db-name: "${DatabaseConfigurations__Name}"
+    poc-api-key: "${ApiConfigurations__Key}" 
   envVars:
     - name: DatabaseConfigurations__Host
       secretKey: poc-db-host
