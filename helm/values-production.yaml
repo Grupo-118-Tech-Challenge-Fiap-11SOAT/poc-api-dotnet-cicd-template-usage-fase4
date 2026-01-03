@@ -84,13 +84,13 @@ secret:
     poc-db-name: "${POC_DATABASE_NAME}"
     poc-api-key: "${POC_API_KEY}" 
   envVars:
-    - name: POC_DATABASE_HOST
+    - name: DatabaseConfigurations__Host
       secretKey: poc-db-host
-    - name: POC_DATABASE_PORT
+    - name: DatabaseConfigurations__Port
       secretKey: poc-db-port
-    - name: POC_DATABASE_NAME
+    - name: DatabaseConfigurations__Name
       secretKey: poc-db-name
-    - name: POC_API_KEY
+    - name: ApiConfigurations__Key
       secretKey: poc-api-key
 
 nodeSelector: {}

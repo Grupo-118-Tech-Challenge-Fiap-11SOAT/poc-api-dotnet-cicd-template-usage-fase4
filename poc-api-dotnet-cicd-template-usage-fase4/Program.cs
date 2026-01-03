@@ -5,6 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+// Add support for environment variables
+builder.Configuration.AddEnvironmentVariables();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
@@ -17,10 +21,23 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddHealthChecks();
 
+var databaseConfigurationsExample = builder.Configuration.GetSection(("DatabaseConfigurations"));
+
+//DatabaseConfigurations__Port
+//DatabaseConfigurations__Host
+//DatabaseConfigurations__Name
+Console.WriteLine("Port: {0}",databaseConfigurationsExample.GetSection("Port").Value);
+Console.WriteLine("Host: {0}",databaseConfigurationsExample.GetSection("Host").Value);
+Console.WriteLine("Name: {0}",databaseConfigurationsExample.GetSection("Name").Value);
+
+var apiKeyConfigurations = builder.Configuration.GetSection(("ApiConfigurations"));
+
+//ApiConfigurations__Key
+Console.WriteLine("ApiKey: {0}",apiKeyConfigurations.GetSection("Key").Value);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
 
 app.UseSwagger();
 app.UseSwaggerUI(s =>
