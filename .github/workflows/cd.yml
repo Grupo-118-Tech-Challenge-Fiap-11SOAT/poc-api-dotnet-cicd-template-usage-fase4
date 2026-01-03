@@ -9,6 +9,10 @@ on:
         helm_chart_version:
             description: 'Helm chart version to deploy'
             required: true
+        helm_chart_name:
+            description: 'Field to insert the Helm Chart Name'
+            required: true
+            default: "grupo118fase4"
 
 jobs:
     deploy:
