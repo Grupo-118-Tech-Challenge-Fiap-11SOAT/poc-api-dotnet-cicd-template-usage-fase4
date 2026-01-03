@@ -83,10 +83,12 @@ secret:
   name: "poc-api-dotnet-cicd-template-usage-fase4"
   annotations: {}
   data:
+    #         STEPS: 2. Criação das chaves no secret, com os valores que foram mapeados dos segredos    
     poc-db-host: "${DatabaseConfigurations__Host}"
     poc-db-port: "${DatabaseConfigurations__Port}"
     poc-db-name: "${DatabaseConfigurations__Name}"
     poc-api-key: "${ApiConfigurations__Key}" 
+  #         STEPS: 3. Mapear as chaves dos segredos para variaveis de ambientes, no formato que o asp.net reconhece para sobrescrever as configs do json
   envVars:
     - name: DatabaseConfigurations__Host
       secretKey: poc-db-host

@@ -27,6 +27,7 @@ jobs:
           helm_chart_name: ${{ github.event.inputs.helm_chart_name }}
           helm_values_file: "helm/values-production.yaml"
           helm_release_name: ${{ github.event.inputs.helm_release_name }}
+#         STEPS: 1. Mapear os segredos para as variaveis do helm, do jeito que api espera
           secrets_mapping: |
               {
                   "DOCKER_REGISTRY": "DOCKER_REGISTRY",
