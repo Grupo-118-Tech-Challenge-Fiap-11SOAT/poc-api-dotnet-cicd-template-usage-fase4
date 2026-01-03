@@ -32,10 +32,10 @@ jobs:
                   "DOCKER_REGISTRY": "DOCKER_REGISTRY",
                   "ACR_USERNAME": "ACR_USERNAME",
                   "ACR_PASSWORD": "ACR_PASSWORD",
-                  "POC_DATABASE_HOST": "GS_POC_DATABASE_HOST",
-                  "POC_DATABASE_PORT": "GS_POC_DATABASE_PORT",
-                  "POC_DATABASE_NAME": "GS_POC_DATABASE_NAME",
-                  "POC_API_KEY": "GS_POC_API_KEY"
+                  "DatabaseConfigurations__Host": "GS_POC_DATABASE_HOST",
+                  "DatabaseConfigurations__Port": "GS_POC_DATABASE_PORT",
+                  "DatabaseConfigurations__Name": "GS_POC_DATABASE_NAME",
+                  "ApiConfigurations__Key": "GS_POC_API_KEY"
               }
           variables_mapping: |
                 {
